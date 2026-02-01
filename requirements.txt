@@ -1,6 +1,10 @@
-# Deep Learning Framework
+# Deep Learning Framework (GPU)
+# Install PyTorch with CUDA 12.1
+--extra-index-url https://download.pytorch.org/whl/cu121
 torch>=2.0.0
 torchvision>=0.15.0
+
+# Lightning
 pytorch-lightning>=2.0.0
 lightning>=2.0.0
 
