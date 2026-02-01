@@ -23,7 +23,9 @@ data_module = EMNISTDataModule(dataset=EMNIST, args=args)
 model = MLP(data_config=data_module.data_config,args=args)
 lit_model = BaseLitModel(model=model, args = args)
 
-wandb_logger = WandbLogger(project="Simple_character_ocr",log_model=True)
+wandb_logger = WandbLogger(project="Simple_character_ocr",
+                           entity="hungluu_test"
+                           ,log_model=True)
 
 trainer = pl.Trainer(max_epochs=10, logger=wandb_logger)
 trainer.fit(lit_model, data_module)
