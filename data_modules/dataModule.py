@@ -4,8 +4,9 @@ from torch.utils.data import DataLoader
 
 BATCH_SIZE = 32
 NUM_WORKERS = 2
-class DataModule(L.LightningDataModule):
-    def __init__(self,dataset, args:argparse.Namespace = None):
+
+class EMNISTDataModule(L.LightningDataModule):
+    def __init__(self, dataset, args: argparse.Namespace = None):
         super().__init__()
         self.args = vars(args) if args is not None else {}
         self.batch_size  = self.args.get("batch_size", BATCH_SIZE)

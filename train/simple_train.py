@@ -9,17 +9,17 @@ from lightning.pytorch.loggers import WandbLogger
 from models_lt import BaseLitModel
 from models import MLP
 from datasets import EMNIST
-from data_modules import DataModule
+from data_modules import EMNISTDataModule
 import argparse
 
 parser = argparse.ArgumentParser()
 parser = EMNIST.add_to_argparse(parser)
-parser = DataModule.add_to_argparse(parser)
+parser = EMNISTDataModule.add_to_argparse(parser)
 parser = MLP.add_to_argparse(parser)
 parser = BaseLitModel.add_to_argparse(parser)
 args = parser.parse_args()
 
-data_module = DataModule(dataset=EMNIST, args= args)
+data_module = EMNISTDataModule(dataset=EMNIST, args=args)
 model = MLP(data_config=data_module.data_config,args=args)
 lit_model = BaseLitModel(model=model, args = args)
 
