@@ -28,6 +28,6 @@ wandb_logger = WandbLogger(project="Simple_character_ocr",
                            ,log_model=True)
 
 trainer = pl.Trainer(max_epochs=10, logger=wandb_logger)
-trainer.fit(lit_model, data_module)
+trainer.fit(lit_model, datamodule= data_module)
 trainer.test(datamodule=data_module, ckpt_path="best")
 
