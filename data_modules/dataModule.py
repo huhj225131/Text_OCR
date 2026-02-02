@@ -5,7 +5,7 @@ from torch.utils.data import DataLoader
 BATCH_SIZE = 32
 NUM_WORKERS = 2
 
-class EMNISTDataModule(L.LightningDataModule):
+class DataModule(L.LightningDataModule):
     def __init__(self, dataset, args: argparse.Namespace = None):
         super().__init__()
         self.args = vars(args) if args is not None else {}

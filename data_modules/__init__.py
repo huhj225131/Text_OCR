@@ -1,3 +1,2 @@
-from .dataModule import EMNISTDataModule
+from .dataModule import DataModule
 
-__all__ = ["EMNISTDataModule"]
