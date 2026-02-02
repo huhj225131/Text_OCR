@@ -1,7 +1,6 @@
 import sys
 from pathlib import Path
 
-# Add parent directory to path
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 
 import pytorch_lightning as pl
